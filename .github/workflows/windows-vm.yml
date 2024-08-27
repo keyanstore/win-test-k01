@@ -1,0 +1,22 @@
+name: Create Windows VM
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v2
+
+      - name: Set up environment
+        run: |
+          echo Setting up Windows environment
+
+      - name: Run a PowerShell command
+        shell: pwsh
+        run: |
+          Write-Host "Hello from Windows VM"
